@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# Configuration variables
-TIMEOUT=10
-
 # ANSI colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-# Log message to console
+# Print message to console
 print_message() {
     local level="$1"
     local message="$2"
@@ -85,11 +82,10 @@ main() {
         echo "Usage: $0 user@server"
         echo "Example: $0 admin@server.example.com"
         exit 1
-    }
+    fi
 
     local server="$1"
     check_updates "$server"
 }
 
-# Run main function
 main "$@"
